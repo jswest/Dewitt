@@ -1,6 +1,6 @@
 <?php
 include( "../scripts/access.php" );
-include( "../scripts/ci.php" );
+//include( "../scripts/ci.php" );
 include( "../scripts/utility.php");
 include('_header.php');
 $table = $_GET['table'];

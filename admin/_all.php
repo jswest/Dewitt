@@ -9,7 +9,7 @@ $columns = $q->get_column_information( $table );
 ?>
 
 <h1><?php echo $table ?></h1>
-<h2 id="new"><?php echo '<a href="create.php?table=' . $table . '">' . $table_single ?></a></h2>
+<h2 id="new">New <?php echo '<a href="create.php?table=' . $table . '">' . $table_single ?></a></h2>
 <table>
 <?php
 echo "<tr>";

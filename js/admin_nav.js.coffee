@@ -51,6 +51,7 @@ $ ->
       console.log "something has gone very, very wrong"
       
   lis.click ->
+    li = $(this)
     $.ajax(
       dataType: 'html'
       data: {
@@ -60,7 +61,12 @@ $ ->
       success: ( data ) ->
         $('#admin-content').html('')
         c.html( data )
-        if $(this).data( 'ajax_url' ) is '_general.php'
+        if c.hasClass('in')
+          c.show()
+          c.removeClass('in')
+          c.addClass('out')
+        ul_in()
+        if li.data( 'ajax_url' ) is '_general.php'
           $('ul#general-options').children('li').click ->
             if $(this).data( 'option' ) is 'create-database'
               $.ajax(
@@ -69,9 +75,4 @@ $ ->
                 success: ( data ) ->
                   $('#admin-content').append( data )
               )
-        if c.hasClass('in')
-          c.show()
-          c.removeClass('in')
-          c.addClass('out')
-        ul_in()
     ) 

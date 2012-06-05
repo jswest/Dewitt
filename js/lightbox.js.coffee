@@ -50,11 +50,8 @@ $ ->
     
     imgs.click ->
       img = $(this)
-
       img_src = img.attr('src')
-      img_real_index = img_src.search( '_' ) + 1
-      img_real = img_src.substring( img_real_index, img_src.length )
-      img_real = "images/" + img_real
+      img_real = img_src.replace( "_thumb100", "")
       
       lg.show(
         0
